@@ -5,6 +5,24 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+      title: const Text(
+        'Pokedex',
+        style: TextStyle(
+          fontSize: 20,
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      backgroundColor: Colors.red,
+    ),
+      body: const SafeArea(
+        child: Center(
+          child: Text("Hello Dresseur Pokémon !"),
+        ),
+      ),
+    );
   }
 }
