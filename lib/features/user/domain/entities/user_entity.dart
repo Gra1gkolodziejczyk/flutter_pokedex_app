@@ -21,14 +21,14 @@ class LoginUserResponseEntity extends Equatable {
   final String? username;
   final String? email;
   final String? password;
-  final String? token;
+  final String? access_token;
 
   const LoginUserResponseEntity({
     this.id,
     this.username,
     this.email,
     this.password,
-    this.token,
+    this.access_token,
   });
 
   @override
@@ -37,7 +37,7 @@ class LoginUserResponseEntity extends Equatable {
     username,
     email,
     password,
-    token,
+    access_token,
   ];
 }
 
@@ -61,26 +61,20 @@ class RegisterUserRequestEntity extends Equatable {
 }
 
 class RegisterUserResponseEntity extends Equatable {
-  final String? id;
   final String? username;
   final String? email;
   final String? password;
-  final String? token;
 
   const RegisterUserResponseEntity({
-    this.id,
     this.username,
     this.email,
     this.password,
-    this.token,
   });
 
   @override
   List<Object?> get props => [
-    id,
     username,
     email,
     password,
-    token,
   ];
 }

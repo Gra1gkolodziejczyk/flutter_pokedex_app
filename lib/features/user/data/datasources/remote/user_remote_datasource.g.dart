@@ -13,7 +13,7 @@ class _UserApiService implements UserApiService {
     this._dio, {
     this.baseUrl,
   }) {
-    baseUrl ??= 'http:localhost:9001';
+    baseUrl ??= 'http://localhost:9001';
   }
 
   final Dio _dio;
@@ -30,7 +30,7 @@ class _UserApiService implements UserApiService {
     final queryParameters = <String, dynamic>{};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{
-      r'Content/Type': contentType,
+      r'Content-Type': contentType,
       r'Accept': accept,
     };
     _headers.removeWhere((k, v) => v == null);
@@ -41,6 +41,7 @@ class _UserApiService implements UserApiService {
       method: 'POST',
       headers: _headers,
       extra: _extra,
+      contentType: contentType,
     )
             .compose(
               _dio.options,
@@ -68,7 +69,7 @@ class _UserApiService implements UserApiService {
     final queryParameters = <String, dynamic>{};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{
-      r'Content/Type': contentType,
+      r'Content-Type': contentType,
       r'Accept': accept,
     };
     _headers.removeWhere((k, v) => v == null);
@@ -79,6 +80,7 @@ class _UserApiService implements UserApiService {
       method: 'POST',
       headers: _headers,
       extra: _extra,
+      contentType: contentType,
     )
             .compose(
               _dio.options,

@@ -43,7 +43,7 @@ class UserRepositoryImpl implements UserRepository {
         final response = await apiService.register(
           body: RegisterUserRequestModel.fromEntity(body!),
           accept: "application/json",
-          contentType:"application/json",
+          contentType: "application/json",
         );
         if(response.response.statusCode == 201) {
           return DataSuccess(response.data);

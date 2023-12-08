@@ -27,7 +27,7 @@ LoginUserResponseModel _$LoginUserResponseModelFromJson(
       username: json['username'] as String?,
       email: json['email'] as String?,
       password: json['password'] as String?,
-      token: json['token'] as String?,
+      access_token: json['access_token'] as String?,
     );
 
 Map<String, dynamic> _$LoginUserResponseModelToJson(
@@ -37,7 +37,7 @@ Map<String, dynamic> _$LoginUserResponseModelToJson(
       'username': instance.username,
       'email': instance.email,
       'password': instance.password,
-      'token': instance.token,
+      'access_token': instance.access_token,
     };
 
 RegisterUserRequestModel _$RegisterUserRequestModelFromJson(
@@ -59,19 +59,15 @@ Map<String, dynamic> _$RegisterUserRequestModelToJson(
 RegisterUserResponseModel _$RegisterUserResponseModelFromJson(
         Map<String, dynamic> json) =>
     RegisterUserResponseModel(
-      id: json['id'] as String?,
       username: json['username'] as String?,
       email: json['email'] as String?,
       password: json['password'] as String?,
-      token: json['token'] as String?,
     );
 
 Map<String, dynamic> _$RegisterUserResponseModelToJson(
         RegisterUserResponseModel instance) =>
     <String, dynamic>{
-      'id': instance.id,
       'username': instance.username,
       'email': instance.email,
       'password': instance.password,
-      'token': instance.token,
     };

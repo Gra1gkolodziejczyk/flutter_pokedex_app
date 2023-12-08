@@ -12,14 +12,14 @@ abstract class UserApiService {
   @POST("/users/auth/login")
   Future<HttpResponse<LoginUserResponseModel>> login({
     @Body() LoginUserRequestModel? body,
-    @Header('Content/Type') String? contentType,
+    @Header('Content-Type') String? contentType,
     @Header('Accept') String? accept,
   });
 
   @POST("/users/auth/register")
   Future<HttpResponse<RegisterUserResponseModel>> register({
     @Body() RegisterUserRequestModel? body,
-    @Header('Content/Type') String? contentType,
+    @Header('Content-Type') String? contentType,
     @Header('Accept') String? accept,
   });
 }

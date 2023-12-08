@@ -35,20 +35,20 @@ class LoginUserResponseModel extends LoginUserResponseEntity {
   final String? username;
   final String? email;
   final String? password;
-  final String? token;
+  final String? access_token;
 
   const LoginUserResponseModel({
     this.id,
     this.username,
     this.email,
     this.password,
-    this.token,
+    this.access_token,
 }): super(
     id: id,
-    email: email,
     username: username,
+    email: email,
     password: password,
-    token: token,
+    access_token: access_token,
   );
 
   factory LoginUserResponseModel.fromJson(Map<String, dynamic> json) =>
@@ -61,7 +61,7 @@ class LoginUserResponseModel extends LoginUserResponseEntity {
       username: entity.username,
       email: entity.email,
       password: entity.password,
-      token: entity.token,
+      access_token: entity.access_token,
     );
   }
 }
@@ -79,9 +79,9 @@ class RegisterUserRequestModel extends RegisterUserRequestEntity {
     this.email,
     this.password,
   }): super(
-  username: username,
-  email: email,
-  password: password,
+    username: username,
+    email: email,
+    password: password,
   );
 
   factory RegisterUserRequestModel.fromJson(Map<String, dynamic> json) =>
@@ -100,25 +100,19 @@ class RegisterUserRequestModel extends RegisterUserRequestEntity {
 @JsonSerializable()
 class RegisterUserResponseModel extends RegisterUserResponseEntity {
 
-  final  String? id;
   final String? username;
   final String? email;
   final String? password;
-  final String? token;
 
 
   const RegisterUserResponseModel({
-    this.id,
     this.username,
     this.email,
     this.password,
-    this.token,
 }) : super(
-  id: id,
-  email: email,
-  username: username,
-  password: password,
-  token: token,
+    email: email,
+    username: username,
+    password: password,
   );
 
     factory RegisterUserResponseModel.fromJson(Map<String, dynamic> json) =>
@@ -127,11 +121,9 @@ class RegisterUserResponseModel extends RegisterUserResponseEntity {
 
   factory RegisterUserResponseModel.fromEntity(RegisterUserResponseEntity entity) {
     return RegisterUserResponseModel(
-      id: entity.id,
       username: entity.username,
       email: entity.email,
       password: entity.password,
-      token: entity.token,
     );
   }
 }
