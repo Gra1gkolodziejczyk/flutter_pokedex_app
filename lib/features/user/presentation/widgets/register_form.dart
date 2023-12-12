@@ -4,6 +4,7 @@ import 'package:flutter_clean_archi_bloc/features/user/presentation/bloc/user_bl
 import 'package:flutter_clean_archi_bloc/features/user/presentation/bloc/user_event.dart';
 import 'package:flutter_clean_archi_bloc/features/user/presentation/bloc/user_state.dart';
 import 'package:flutter_clean_archi_bloc/injection_container.dart';
+import 'package:go_router/go_router.dart';
 
 class RegisterForm extends StatefulWidget {
   const RegisterForm({super.key});
@@ -116,7 +117,7 @@ class _RegisterFormState extends State<RegisterForm> {
               Center(
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color.fromRGBO(50, 100, 176, 1),
+                    backgroundColor: const Color.fromRGBO(50, 100, 176, 1),
                   ),
                   onPressed: () {
                     userBloc.add(
@@ -126,6 +127,7 @@ class _RegisterFormState extends State<RegisterForm> {
                         password: password.text,
                       ),
                     );
+                    context.go('/login');
                   },
                   child: const Text(
                     "S'inscrire",

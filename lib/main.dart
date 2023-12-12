@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_clean_archi_bloc/features/pokemon/presentation/bloc/pokemon_bloc.dart';
 import 'package:flutter_clean_archi_bloc/features/user/presentation/bloc/user_bloc.dart';
 import 'package:flutter_clean_archi_bloc/injection_container.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -20,7 +21,10 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => sl<UserBloc>(),
+          create: (context) =>sl<UserBloc>(),
+        ),
+        BlocProvider(
+          create: (context) =>sl<PokemonBloc>(),
         ),
       ],
       child: MaterialApp.router(

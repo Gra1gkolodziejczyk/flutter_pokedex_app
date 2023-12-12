@@ -1,3 +1,8 @@
+import 'package:flutter_clean_archi_bloc/features/pokemon/data/datasources/remote/pokemon_remote_datasource.dart';
+import 'package:flutter_clean_archi_bloc/features/pokemon/data/repositories/pokemon_repository_impl.dart';
+import 'package:flutter_clean_archi_bloc/features/pokemon/domain/repositories/pokemon_repository.dart';
+import 'package:flutter_clean_archi_bloc/features/pokemon/domain/usecases/pokemon.dart';
+import 'package:flutter_clean_archi_bloc/features/pokemon/presentation/bloc/pokemon_bloc.dart';
 import 'package:flutter_clean_archi_bloc/features/user/domain/repositories/user_repository.dart';
 import 'package:get_it/get_it.dart';
 import 'package:dio/dio.dart';
@@ -13,19 +18,30 @@ Future<void> initializeDependencies() async {
   // Dio 
   sl.registerSingleton<Dio>(Dio());
 
-  ///////////////////// DEPENDENTIES ///////////////////////////////////////
+  //////////////////////////// DEPENDENTIES ///////////////////////////////////////
+
   // User
   sl.registerSingleton<UserApiService>(UserApiService(sl()));
   sl.registerSingleton<UserRepository>(UserRepositoryImpl(sl()));
 
   // Pokemon
+  sl.registerSingleton<PokemonApiService>(PokemonApiService(sl()));
+  sl.registerSingleton<PokemonRepository>(PokemonRepositoryImpl(sl()));
 
-  ///////////////////// USECASE ////////////////////////////////////////////
+  /////////////////////////// USECASE ////////////////////////////////////////////
+
   // User
   sl.registerSingleton<LoginUseCase>(LoginUseCase(sl()));
   sl.registerSingleton<RegisterUseCase>(RegisterUseCase(sl()));
 
-  ///////////////////// BLOC ///////////////////////////////////////////////
+  // Pokemon
+  sl.registerSingleton<PokemonUseCase>(PokemonUseCase(sl()));
+
+  /////////////////////////// BLOC ///////////////////////////////////////////////
+
   // User
   sl.registerFactory<UserBloc>(() => UserBloc(sl(), sl()));
+  
+  // Pokemon
+  sl.registerFactory<PokemonBloc>(() => PokemonBloc(sl()));
 }

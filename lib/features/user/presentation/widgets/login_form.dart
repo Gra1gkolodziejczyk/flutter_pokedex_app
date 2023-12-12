@@ -4,6 +4,7 @@ import 'package:flutter_clean_archi_bloc/features/user/presentation/bloc/user_bl
 import 'package:flutter_clean_archi_bloc/features/user/presentation/bloc/user_event.dart';
 import 'package:flutter_clean_archi_bloc/features/user/presentation/bloc/user_state.dart';
 import 'package:flutter_clean_archi_bloc/injection_container.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
@@ -87,7 +88,7 @@ class _LoginFormState extends State<LoginForm> {
               Center(
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color.fromRGBO(50, 100, 176, 1),
+                    backgroundColor: const Color.fromRGBO(50, 100, 176, 1),
                   ),
                   onPressed: () {
                     userBloc.add(
@@ -96,6 +97,7 @@ class _LoginFormState extends State<LoginForm> {
                         password: password.text,
                       ),
                     );
+                    context.go('/');
                   },
                   child: const Text(
                     'Connexion',
