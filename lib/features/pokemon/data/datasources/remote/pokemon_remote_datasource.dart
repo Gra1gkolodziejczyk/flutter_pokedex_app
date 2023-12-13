@@ -5,10 +5,10 @@ import 'package:dio/dio.dart';
 
 part 'pokemon_remote_datasource.g.dart';
 
-@RestApi(baseUrl: pokemonApi)
+@RestApi(baseUrl: baseUrl)
 abstract class PokemonApiService {
   factory PokemonApiService(Dio dio) = _PokemonApiService;
 
-  @GET("https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json")
-  Future<HttpResponse<List<PokemonResponseModel>>> getPokemon();
+  @GET('/pokemons')
+  Future<HttpResponse<List<PokemonResponseModel>>> getPokemons();
 }

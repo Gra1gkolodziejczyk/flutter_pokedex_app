@@ -5,21 +5,19 @@ part 'pokemon_model.g.dart';
 
 @JsonSerializable()
 class PokemonResponseModel extends PokemonResponseEntity {
-  final double? id;
-  final String? num;
+  final String? id;
   final String? name;
-  final String? img;
+  final String? url;
   
   const PokemonResponseModel({
     this.id,
-    this.num,
     this.name,
-    this.img,
+    this.url,
   }) : super(
     id: id,
-    num: num,
     name: name,
-    img: img,
+    url: url,
+
   );
 
   factory PokemonResponseModel.fromJson(Map<String, dynamic> json) => 
@@ -29,9 +27,8 @@ class PokemonResponseModel extends PokemonResponseEntity {
   factory PokemonResponseModel.fromEntity(PokemonResponseEntity entity) {
     return PokemonResponseModel(
       id: entity.id,
-      num: entity.num,
       name: entity.name,
-      img: entity.img,
+      url: entity.url,
     );
   }
 }

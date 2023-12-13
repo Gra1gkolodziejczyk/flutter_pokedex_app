@@ -9,17 +9,15 @@ part of 'pokemon_model.dart';
 PokemonResponseModel _$PokemonResponseModelFromJson(
         Map<String, dynamic> json) =>
     PokemonResponseModel(
-      id: (json['id'] as num?)?.toDouble(),
-      num: json['num'] as String?,
+      id: json['id'] as String?,
       name: json['name'] as String?,
-      img: json['img'] as String?,
+      url: json['url'] as String?,
     );
 
 Map<String, dynamic> _$PokemonResponseModelToJson(
         PokemonResponseModel instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'num': instance.num,
       'name': instance.name,
-      'img': instance.img,
+      'url': instance.url,
     };

@@ -6,11 +6,11 @@ import 'package:go_router/go_router.dart';
 final router = GoRouter(
   routes : [
     GoRoute(
-      path: '/',
+      path: '/home',
       builder: (context, state) => const HomeScreen(),
     ),
     GoRoute(
-      path: '/login',
+      path: '/',
       builder: (context, state) => const LoginScreen(),
     ),
     GoRoute(

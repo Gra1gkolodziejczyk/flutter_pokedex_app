@@ -48,7 +48,7 @@ class _LoginFormState extends State<LoginForm> {
               const Text(
                 'Adresse e-mail :',
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
               ),
               TextFormField(
@@ -59,7 +59,7 @@ class _LoginFormState extends State<LoginForm> {
                     ),
                     hintText: 'Entrer votre adresse e-mail',
                     hintStyle: TextStyle(
-                      color: Colors.white,
+                      color: Colors.black,
                     )),
                 controller: email,
               ),
@@ -67,7 +67,7 @@ class _LoginFormState extends State<LoginForm> {
               const Text(
                 'Mot de passe :',
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
               ),
               TextFormField(
@@ -79,7 +79,7 @@ class _LoginFormState extends State<LoginForm> {
                   ),
                   hintText: 'Entre votre mot de passe',
                   hintStyle: TextStyle(
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                 ),
                 controller: password,
@@ -97,7 +97,7 @@ class _LoginFormState extends State<LoginForm> {
                         password: password.text,
                       ),
                     );
-                    context.go('/');
+                    context.go('/home');
                   },
                   child: const Text(
                     'Connexion',

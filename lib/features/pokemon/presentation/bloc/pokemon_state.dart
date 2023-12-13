@@ -2,11 +2,11 @@ import 'package:dio/dio.dart';
 import 'package:flutter_clean_archi_bloc/features/pokemon/domain/entities/pokemon_entity.dart';
 
 abstract class PokemonState {
-  final List<PokemonResponseEntity>? getPokemon;
+  final List<PokemonResponseEntity>? getPokemons;
   final DioException? error;
 
   const PokemonState({
-    this.getPokemon,
+    this.getPokemons,
     this.error,
   });
 }
@@ -16,7 +16,7 @@ class PokemonLoading extends PokemonState {
 }
 
 class PokemonLoaded extends PokemonState {
-  const PokemonLoaded({List<PokemonResponseEntity>? getPokemon}) : super(getPokemon: getPokemon);
+  const PokemonLoaded({List<PokemonResponseEntity>? getPokemons}) : super(getPokemons: getPokemons);
 }
 
 class PokemonError extends PokemonState {

@@ -43,7 +43,6 @@ dependencies:
   json_annotation: ^4.8.1
   get_it: ^7.6.4
   build_runner: ^2.4.7
-  freezed: ^2.4.5
   retrofit: ^4.0.3
   retrofit_generator: ^8.0.5
   clean_architecture_scaffold: ^0.0.7

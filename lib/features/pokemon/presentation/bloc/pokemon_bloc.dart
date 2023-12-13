@@ -10,19 +10,23 @@ class PokemonBloc extends Bloc<PokemonEvent, PokemonState> {
   PokemonBloc(
     this.pokemonUseCase,
   ) : super(const PokemonLoading()) {
-    on<GetPokemonEvent>(getPokemons);
+    on<GetPokemonEvent>(getPokemon);
   }
 
-    void getPokemons(GetPokemonEvent event, Emitter<PokemonState> emit) async {
+    void getPokemon(GetPokemonEvent event, Emitter<PokemonState> emit) async {
     final data = await pokemonUseCase();
 
     if(data is DataSuccess) {
-      emit(PokemonLoaded(getPokemon: data.data));
       print(data.data);
+      emit(PokemonLoaded(getPokemons: data.data));
+      print(data.data);
+
     }
 
     if(data is DataFailure) {
+      print(data.error);
       emit(PokemonError(data.error));
+      print(data.error);
     }
   }
 } 

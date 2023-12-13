@@ -51,7 +51,7 @@ class _RegisterFormState extends State<RegisterForm> {
               const Text(
                 'Pseudo :',
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontWeight: FontWeight.bold,
                   fontSize: 15,
                 ),
@@ -64,15 +64,16 @@ class _RegisterFormState extends State<RegisterForm> {
                   ),
                   hintText: 'Entrer votre adresse pseudo',
                   hintStyle: TextStyle(
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                 ),
                 controller: username,
               ),
+              const SizedBox(height: 15),
               const Text(
                 'Adresse e-mail :',
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontWeight: FontWeight.bold,
                   fontSize: 15,
                 ),
@@ -85,7 +86,7 @@ class _RegisterFormState extends State<RegisterForm> {
                   ),
                   hintText: 'Entrer votre adresse e-mail',
                   hintStyle: TextStyle(
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                 ),
                 controller: email,
@@ -94,7 +95,7 @@ class _RegisterFormState extends State<RegisterForm> {
               const Text(
                 'Mot de passe :',
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontWeight: FontWeight.bold,
                   fontSize: 15,
                 ),
@@ -108,7 +109,7 @@ class _RegisterFormState extends State<RegisterForm> {
                   ),
                   hintText: 'Entre votre mot de passe',
                   hintStyle: TextStyle(
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                 ),
                 controller: password,
@@ -127,7 +128,7 @@ class _RegisterFormState extends State<RegisterForm> {
                         password: password.text,
                       ),
                     );
-                    context.go('/login');
+                    context.go('/');
                   },
                   child: const Text(
                     "S'inscrire",

@@ -1,23 +1,20 @@
 import 'package:equatable/equatable.dart';
 
 class PokemonResponseEntity extends Equatable {
-  final double? id;
-  final String? num;
+  final String? id;
+  final String? url;
   final String? name;
-  final String? img;
 
   const PokemonResponseEntity({
     this.id,
-    this.num,
     this.name,
-    this.img,
+    this.url,
   });
 
   @override
   List<Object?> get props => [
     id,
-    num,
     name,
-    img,
+    url,
   ];
 }

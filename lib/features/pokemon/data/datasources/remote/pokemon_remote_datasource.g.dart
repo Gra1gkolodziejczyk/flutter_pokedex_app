@@ -13,8 +13,7 @@ class _PokemonApiService implements PokemonApiService {
     this._dio, {
     this.baseUrl,
   }) {
-    baseUrl ??=
-        'https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json';
+    baseUrl ??= 'http://localhost:9001';
   }
 
   final Dio _dio;
@@ -22,7 +21,7 @@ class _PokemonApiService implements PokemonApiService {
   String? baseUrl;
 
   @override
-  Future<HttpResponse<List<PokemonResponseModel>>> getPokemon() async {
+  Future<HttpResponse<List<PokemonResponseModel>>> getPokemons() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -35,7 +34,7 @@ class _PokemonApiService implements PokemonApiService {
     )
             .compose(
               _dio.options,
-              'https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json',
+              '/pokemons',
               queryParameters: queryParameters,
               data: _data,
             )

@@ -11,7 +11,7 @@ class PokemonRepositoryImpl implements PokemonRepository {
   @override
   Future<DataState<List<PokemonResponseModel>>> getPokemons() async {
     try {
-      final response = await apiService.getPokemon();
+      final response = await apiService.getPokemons();
       if (response.response.statusCode == 200) {
         return DataSuccess(response.data);
       } else {
