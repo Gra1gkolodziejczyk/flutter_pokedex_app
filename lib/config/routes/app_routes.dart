@@ -6,7 +6,7 @@ import 'package:go_router/go_router.dart';
 final router = GoRouter(
   routes : [
     GoRoute(
-      path: '/home',
+      path: '/pokedex',
       builder: (context, state) => const HomeScreen(),
     ),
     GoRoute(

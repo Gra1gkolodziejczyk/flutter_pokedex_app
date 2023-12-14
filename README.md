@@ -1,16 +1,11 @@
 # flutter_clean_archi_bloc
 
-A new Flutter project.
+My first project using Bloc for state management.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+```git clone https://github.com/Gra1gkolodziejczyk/Flutter_clean_archi_bloc.git```
 
-A few resources to get you started if this is your first Flutter project:
+```flutter pub get```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```flutter run```

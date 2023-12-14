@@ -39,17 +39,18 @@ class _PokemonListState extends State<PokemonList> {
               SliverPadding(
                 padding: const EdgeInsets.all(5),
                 sliver: SliverGrid.builder(
-                    itemCount: state.getPokemons?.length ?? 0,
-                    addAutomaticKeepAlives: false,
-                    addRepaintBoundaries: false,
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      mainAxisSpacing: 30,
-                      crossAxisSpacing: 3,
-                    ),
-                    itemBuilder: (context, index) {
-                      return Container(
+                  itemCount: state.getPokemons?.length ?? 0,
+                  addAutomaticKeepAlives: false,
+                  addRepaintBoundaries: false,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 30,
+                    crossAxisSpacing: 3,
+                  ),
+                  itemBuilder: (context, index) {
+                    return InkWell(
+                      onTap: () {},
+                      child: Container(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -67,8 +68,10 @@ class _PokemonListState extends State<PokemonList> {
                             ),
                           ],
                         ),
-                      );
-                    }),
+                      ),
+                    );
+                  },
+                ),
               ),
             ],
           );

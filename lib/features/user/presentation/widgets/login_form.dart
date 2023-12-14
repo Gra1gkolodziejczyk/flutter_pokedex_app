@@ -97,7 +97,7 @@ class _LoginFormState extends State<LoginForm> {
                         password: password.text,
                       ),
                     );
-                    context.go('/home');
+                    context.go('/pokedex');
                   },
                   child: const Text(
                     'Connexion',
