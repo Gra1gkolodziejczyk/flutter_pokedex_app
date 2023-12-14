@@ -17,16 +17,12 @@ class PokemonBloc extends Bloc<PokemonEvent, PokemonState> {
     final data = await pokemonUseCase();
 
     if(data is DataSuccess) {
-      print(data.data);
       emit(PokemonLoaded(getPokemons: data.data));
-      print(data.data);
 
     }
 
     if(data is DataFailure) {
-      print(data.error);
       emit(PokemonError(data.error));
-      print(data.error);
     }
   }
 } 
