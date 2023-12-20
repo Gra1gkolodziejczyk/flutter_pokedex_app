@@ -21,10 +21,13 @@ class _PokemonApiService implements PokemonApiService {
   String? baseUrl;
 
   @override
-  Future<HttpResponse<List<PokemonResponseModel>>> getPokemons() async {
+  Future<HttpResponse<List<PokemonResponseModel>>> getPokemons(
+      {String? accept}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{r'Accept': accept};
+    _headers.removeWhere((k, v) => v == null);
     final Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<List<dynamic>>(
         _setStreamType<HttpResponse<List<PokemonResponseModel>>>(Options(

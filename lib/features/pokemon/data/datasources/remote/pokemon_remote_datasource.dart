@@ -10,5 +10,7 @@ abstract class PokemonApiService {
   factory PokemonApiService(Dio dio) = _PokemonApiService;
 
   @GET('/pokemons')
-  Future<HttpResponse<List<PokemonResponseModel>>> getPokemons();
+  Future<HttpResponse<List<PokemonResponseModel>>> getPokemons({
+    @Header('Accept') String? accept,
+  });
 }
