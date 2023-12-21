@@ -7,7 +7,6 @@ import 'package:flutter_clean_archi_bloc/features/user/presentation/bloc/user_ev
 import 'package:flutter_clean_archi_bloc/features/user/presentation/bloc/user_state.dart';
 
 class UserBloc extends Bloc<UserEvent, UserState> {
-
   final RegisterUseCase registerUseCase;
   final LoginUseCase loginUseCase;
 
@@ -28,11 +27,11 @@ class UserBloc extends Bloc<UserEvent, UserState> {
       ),
     );
 
-    if(data is DataSuccess) {
+    if (data is DataSuccess) {
       emit(UserLoaded(register: data.data));
     }
 
-    if(data is DataFailure) {
+    if (data is DataFailure) {
       emit(UserError(data.error));
     }
   }
@@ -45,12 +44,12 @@ class UserBloc extends Bloc<UserEvent, UserState> {
       ),
     );
 
-    if(data is DataSuccess) {
+    if (data is DataSuccess) {
       emit(UserLoaded(login: data.data));
     }
 
-    if(data is DataFailure) {
+    if (data is DataFailure) {
       emit(UserError(data.error));
-    } 
-  } 
+    }
+  }
 }

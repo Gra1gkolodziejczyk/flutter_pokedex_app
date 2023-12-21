@@ -12,7 +12,7 @@ class PokemonRepositoryImpl implements PokemonRepository {
   Future<DataState<List<PokemonResponseModel>>> getPokemons() async {
     try {
       final response = await apiService.getPokemons(
-        accept: "application/json"
+        accept: "application/json",
       );
       if (response.response.statusCode == 200) {
         return DataSuccess(response.data);

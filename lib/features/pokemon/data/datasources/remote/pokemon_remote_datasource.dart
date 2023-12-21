@@ -1,7 +1,7 @@
+import 'package:dio/dio.dart';
+import 'package:flutter_clean_archi_bloc/core/constants/constants.dart';
 import 'package:flutter_clean_archi_bloc/features/pokemon/data/models/pokemon_model.dart';
 import 'package:retrofit/retrofit.dart';
-import 'package:flutter_clean_archi_bloc/core/constants/constants.dart';
-import 'package:dio/dio.dart';
 
 part 'pokemon_remote_datasource.g.dart';
 
