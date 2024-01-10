@@ -82,7 +82,7 @@ class _PokemonListState extends State<PokemonList> {
               color: Colors.red,
             ),
           );
-        } else if (state is PokemonError){
+        } else if (state is PokemonError) {
           return const Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,

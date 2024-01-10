@@ -8,20 +8,19 @@ class PokemonResponseModel extends PokemonResponseEntity {
   final String? id;
   final String? name;
   final String? url;
-  
+
   const PokemonResponseModel({
     this.id,
     this.name,
     this.url,
   }) : super(
-    id: id,
-    name: name,
-    url: url,
+          id: id,
+          name: name,
+          url: url,
+        );
 
-  );
-
-  factory PokemonResponseModel.fromJson(Map<String, dynamic> json) => 
-    _$PokemonResponseModelFromJson(json);
+  factory PokemonResponseModel.fromJson(Map<String, dynamic> json) =>
+      _$PokemonResponseModelFromJson(json);
   Map<String, dynamic> toJson() => _$PokemonResponseModelToJson(this);
 
   factory PokemonResponseModel.fromEntity(PokemonResponseEntity entity) {
