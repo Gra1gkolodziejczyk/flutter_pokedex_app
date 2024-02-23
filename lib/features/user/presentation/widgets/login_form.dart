@@ -43,6 +43,7 @@ class _LoginFormState extends State<LoginForm> {
         return Form(
           key: _formKey,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(

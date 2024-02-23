@@ -18,7 +18,7 @@ Future<void> initializeDependencies() async {
   // Dio
   sl.registerSingleton<Dio>(Dio());
 
-  //////////////////////////// DEPENDENTIES ///////////////////////////////////////
+  // DEPENDENTIES
   // User
   sl.registerSingleton<UserApiService>(UserApiService(sl()));
   sl.registerSingleton<UserRepository>(UserRepositoryImpl(sl()));
@@ -27,7 +27,7 @@ Future<void> initializeDependencies() async {
   sl.registerSingleton<PokemonApiService>(PokemonApiService(sl()));
   sl.registerSingleton<PokemonRepository>(PokemonRepositoryImpl(sl()));
 
-  /////////////////////////// USECASE ////////////////////////////////////////////
+  // USECASE
   // User
   sl.registerSingleton<LoginUseCase>(LoginUseCase(sl()));
   sl.registerSingleton<RegisterUseCase>(RegisterUseCase(sl()));
@@ -35,7 +35,7 @@ Future<void> initializeDependencies() async {
   // Pokemon
   sl.registerSingleton<PokemonUseCase>(PokemonUseCase(sl()));
 
-  /////////////////////////// BLOC ///////////////////////////////////////////////
+  // BLOC
   // User
   sl.registerFactory<UserBloc>(() => UserBloc(sl(), sl()));
 

@@ -11,13 +11,13 @@ class LoginUserRequestModel extends LoginUserRequestEntity {
   const LoginUserRequestModel({
     this.email,
     this.password,
-}): super(
-    email: email,
-    password: password,
-  );
+  }) : super(
+          email: email,
+          password: password,
+        );
 
   factory LoginUserRequestModel.fromJson(Map<String, dynamic> json) =>
-    _$LoginUserRequestModelFromJson(json);
+      _$LoginUserRequestModelFromJson(json);
   Map<String, dynamic> toJson() => _$LoginUserRequestModelToJson(this);
 
   factory LoginUserRequestModel.fromEntity(LoginUserRequestEntity entity) {
@@ -30,7 +30,6 @@ class LoginUserRequestModel extends LoginUserRequestEntity {
 
 @JsonSerializable()
 class LoginUserResponseModel extends LoginUserResponseEntity {
-
   final String? id;
   final String? username;
   final String? email;
@@ -43,16 +42,16 @@ class LoginUserResponseModel extends LoginUserResponseEntity {
     this.email,
     this.password,
     this.access_token,
-}): super(
-    id: id,
-    username: username,
-    email: email,
-    password: password,
-    access_token: access_token,
-  );
+  }) : super(
+          id: id,
+          username: username,
+          email: email,
+          password: password,
+          access_token: access_token,
+        );
 
   factory LoginUserResponseModel.fromJson(Map<String, dynamic> json) =>
-    _$LoginUserResponseModelFromJson(json);
+      _$LoginUserResponseModelFromJson(json);
   Map<String, dynamic> toJson() => _$LoginUserResponseModelToJson(this);
 
   factory LoginUserResponseModel.fromEntity(LoginUserResponseEntity entity) {
@@ -68,27 +67,26 @@ class LoginUserResponseModel extends LoginUserResponseEntity {
 
 @JsonSerializable()
 class RegisterUserRequestModel extends RegisterUserRequestEntity {
-
   final String? username;
   final String? email;
   final String? password;
-  
-  
+
   const RegisterUserRequestModel({
     this.username,
     this.email,
     this.password,
-  }): super(
-    username: username,
-    email: email,
-    password: password,
-  );
+  }) : super(
+          username: username,
+          email: email,
+          password: password,
+        );
 
   factory RegisterUserRequestModel.fromJson(Map<String, dynamic> json) =>
-    _$RegisterUserRequestModelFromJson(json);
+      _$RegisterUserRequestModelFromJson(json);
   Map<String, dynamic> toJson() => _$RegisterUserRequestModelToJson(this);
 
-  factory RegisterUserRequestModel.fromEntity(RegisterUserRequestEntity entity) {
+  factory RegisterUserRequestModel.fromEntity(
+      RegisterUserRequestEntity entity) {
     return RegisterUserRequestModel(
       username: entity.username,
       email: entity.email,
@@ -99,27 +97,26 @@ class RegisterUserRequestModel extends RegisterUserRequestEntity {
 
 @JsonSerializable()
 class RegisterUserResponseModel extends RegisterUserResponseEntity {
-
   final String? username;
   final String? email;
   final String? password;
-
 
   const RegisterUserResponseModel({
     this.username,
     this.email,
     this.password,
-}) : super(
-    email: email,
-    username: username,
-    password: password,
-  );
+  }) : super(
+          email: email,
+          username: username,
+          password: password,
+        );
 
-    factory RegisterUserResponseModel.fromJson(Map<String, dynamic> json) =>
-    _$RegisterUserResponseModelFromJson(json);
+  factory RegisterUserResponseModel.fromJson(Map<String, dynamic> json) =>
+      _$RegisterUserResponseModelFromJson(json);
   Map<String, dynamic> toJson() => _$RegisterUserResponseModelToJson(this);
 
-  factory RegisterUserResponseModel.fromEntity(RegisterUserResponseEntity entity) {
+  factory RegisterUserResponseModel.fromEntity(
+      RegisterUserResponseEntity entity) {
     return RegisterUserResponseModel(
       username: entity.username,
       email: entity.email,
